@@ -97,6 +97,10 @@ button:disabled {
   font-weight: 600;
 }
 
+.message.warning {
+  color: #b91c1c;
+}
+
 .items {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -126,6 +130,7 @@ button:disabled {
   padding: 2px 8px;
   border-radius: 999px;
   background: #e2e8f0;
+  text-transform: uppercase;
 }
 
 .status.available {
