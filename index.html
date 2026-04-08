@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dorm Marketplace MVP</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <h1>Dorm Marketplace</h1>
+        <p>Claim used campus items for in-person handoff.</p>
+      </header>
+
+      <section class="panel">
+        <h2>Create Listing</h2>
+        <form id="listing-form" class="form-grid">
+          <label>
+            Seller Name
+            <input id="sellerName" name="sellerName" required maxlength="40" />
+          </label>
+          <label>
+            Item Title
+            <input id="title" name="title" required maxlength="80" />
+          </label>
+          <label>
+            Category
+            <select id="category" name="category" required>
+              <option value="Textbook">Textbook</option>
+              <option value="Mini Fridge">Mini Fridge</option>
+              <option value="Chair">Chair</option>
+              <option value="Bike">Bike</option>
+              <option value="Calculator">Calculator</option>
+              <option value="Other">Other</option>
+            </select>
+          </label>
+          <label>
+            Pickup Spot
+            <input id="location" name="location" required maxlength="60" />
+          </label>
+          <label class="full-width">
+            Notes (optional)
+            <textarea id="notes" name="notes" rows="2" maxlength="160"></textarea>
+          </label>
+          <button type="submit">Add Listing</button>
+        </form>
+      </section>
+
+      <section class="panel">
+        <div class="list-header">
+          <h2>Marketplace Items</h2>
+          <button id="seed-btn" class="secondary">Load Sample Data</button>
+        </div>
+        <p class="hint">
+          Claim holds expire in <strong>20 seconds</strong> unless buyer confirms handoff.
+        </p>
+        <div id="message" class="message" aria-live="polite"></div>
+        <div id="items" class="items"></div>
+      </section>
+    </main>
+
+    <template id="item-template">
+      <article class="item-card">
+        <div class="item-top">
+          <h3 class="item-title"></h3>
+          <span class="status"></span>
+        </div>
+        <p class="meta"></p>
+        <p class="notes"></p>
+        <div class="claim-row">
+          <input class="buyer-input" placeholder="Buyer name" maxlength="40" />
+          <button class="claim-btn">Claim Item</button>
+        </div>
+        <p class="claim-info"></p>
+        <div class="actions"></div>
+      </article>
+    </template>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
